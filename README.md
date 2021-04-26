@@ -1,4 +1,4 @@
-# Foobar
+# fullapp_project
 
 Fullapp is a Django app for dealing with basic commerce needs like Stock, Purchases and Sales.
 
