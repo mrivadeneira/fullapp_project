@@ -10,4 +10,4 @@ src/*.egg-info
 lib
 lib64
 **.py[cod]
-**/__pycache__
+**/__pycache__/
