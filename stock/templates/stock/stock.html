@@ -20,13 +20,14 @@
             </tr>
         </thead>
         {% for item in stock %}
+
         <tr>
             <td>{{ item.sku }}</td>
-            <td>{{ item.category }}</td>
-            <td>{{ item.stock_type }}</td>
-            <td>{{ item.color }}</td>
-            <td>{{ item.size }}</td>
-            <td>{{ item.movement }}</td>
+            <td>{{ item.category.category_name }}</td>
+            <td>{{ item.stock_type.stock_type_name }}</td>
+            <td>{{ item.color.color_name }}</td>
+            <td>{{ item.size.size_name }}</td>
+            <td>{{ item.movement.movement_name }}</td>
         </tr>
         {% endfor %}
     </table>

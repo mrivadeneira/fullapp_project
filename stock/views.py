@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from .forms import StockMovementForm
 from .models import Stock
 
 def stock_snapshot(request):
-    stock = Stock.objects.all()
+    stock = Stock.objects.select_related("category","stock_type","color","size","movement").all()
     ctx = {"stock": stock}
     return render(request, "stock/stock.html", ctx)
 
@@ -22,9 +22,9 @@ def stock_movement(request):
                 size = form.cleaned_data["size"],
                 movement = form.cleaned_data["movement"]
             )
-            # return HttpResponse(reverse("stock_snapshot"))
             return HttpResponseRedirect("stock")
     else:
         form = StockMovementForm()
         ctx = {"form": form}
         return render(request, "stock/stock-movement.html", ctx)
+        
