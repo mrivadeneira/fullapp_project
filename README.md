@@ -8,12 +8,12 @@ Fullapp is a Django app for dealing with basic commerce needs like Stock, Purcha
 python -m pip install Django
 ```
 
-## Usage at the project directory
+## Use this at the project directory to make db and table creations
 
 ```python
-manage.py makemigrations
-manage.py migrate
-manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
 ```
 
 ## Contributing
