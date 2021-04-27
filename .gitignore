@@ -9,5 +9,5 @@ parts
 src/*.egg-info
 lib
 lib64
-**.py[cod]
+**.pyc
 **/__pycache__/

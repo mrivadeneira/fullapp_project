@@ -17,6 +17,8 @@
                 <th>color</th>
                 <th>size</th>
                 <th>movement</th>
+                <th>movement_date</th>
+                <th>movement_registration</th>
             </tr>
         </thead>
         {% for item in stock %}
@@ -28,6 +30,8 @@
             <td>{{ item.color.color_name }}</td>
             <td>{{ item.size.size_name }}</td>
             <td>{{ item.movement.movement_name }}</td>
+            <td>{{ item.movement_date }}</td>
+            <td>{{ item.movement_registration }}</td>
         </tr>
         {% endfor %}
     </table>

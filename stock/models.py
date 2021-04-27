@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class Category(models.Model):
     category_name = models.CharField(max_length=128)
@@ -22,3 +23,5 @@ class Stock(models.Model):
     color = models.ForeignKey(Color, on_delete=models.SET_NULL, null=True)
     size = models.ForeignKey(Size, on_delete=models.SET_NULL, null=True)
     movement = models.ForeignKey(Movement, on_delete=models.SET_NULL, null=True)
+    movement_date = models.DateTimeField(default=timezone.now())
+    movement_registration = models.DateTimeField(auto_now_add=True)
