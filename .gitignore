@@ -11,3 +11,6 @@ lib
 lib64
 **.pyc
 **/__pycache__/
+fullapp_project/__pycache__/*
+stock/__pycache__/*
+stock/__pycache__/*.pyc

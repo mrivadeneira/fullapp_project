@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views #MR: Imported standar login module
 from login import views as login_views #MR: Login app should be created at first before importing its views
+from django.urls import re_path
+from stock import views as stock_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +27,7 @@ urlpatterns = [
     path('', login_views.index, name='index'),
     # path('auth-view', login_views.auth_view, name='auth-view'),   
     path('login/', include('login.urls')),
-    path('stock/', include('stock.urls'))
+    path('stock/', include('stock.urls')),
+    re_path('^api/stock/$', stock_views.stockapi_list),
+    re_path('^api/stock/([0-9])$', stock_views.stockapi_details),
 ]
